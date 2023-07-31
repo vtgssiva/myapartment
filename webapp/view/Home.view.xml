@@ -1,0 +1,113 @@
+<!-- <mvc:View controllerName="com.exercise.myfirstsapui5.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <HBox id="vbox1">
+                <items>
+                    <VBox id="vboxsub1">
+                        <items>
+                            <Text id='id1' text='VBox 1'></Text>
+                        </items>
+                    </VBox>
+
+                    <VBox id="vboxsub2">
+                        <items>
+                            <Text id='id2' text='VBox 2'></Text>
+                        </items>
+                    </VBox>
+                </items>
+            </HBox>
+        </content>
+    </Page>
+</mvc:View> -->
+<mvc:View
+	controllerName="com.exercise.myfirstsapui5.controller.Home"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:tnt="sap.tnt"
+	height="100%">
+	<tnt:ToolPage id="toolPage">
+		<tnt:header>
+			<tnt:ToolHeader>
+				<Button
+					id="sideNavigationToggleButton"
+					icon="sap-icon://menu2"
+					type="Transparent"
+					press=".onSideNavButtonPress">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow" />
+					</layoutData>
+				</Button>
+                <FlexBox direction="Row" alignItems="Start" class="sapUiTinyMarginBottom">
+                    <tnt:InfoLabel id="il7" text="My Apartment" colorScheme="7"/>
+                </FlexBox>
+				<tnt:ToolHeaderUtilitySeparator />
+				<ToolbarSpacer>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow" minWidth="20px" />
+					</layoutData>
+				</ToolbarSpacer>
+				<Button text="Admin" type="Transparent" press=".handleUserNamePress" ariaHasPopup="Menu">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow" />
+					</layoutData>
+				</Button>
+			</tnt:ToolHeader>
+		</tnt:header>
+		<tnt:sideContent>
+			<tnt:SideNavigation
+				expanded="true"
+				selectedKey="{/selectedKey}"
+				itemSelect=".onItemSelect">
+				<tnt:NavigationList>
+					<tnt:NavigationListItem text="Apartment">
+						<tnt:NavigationListItem text="Blue Print" key="blueprint"/>
+                        <tnt:NavigationListItem text="Maintenance" key="maintenance"/>
+					</tnt:NavigationListItem>
+				</tnt:NavigationList>
+			</tnt:SideNavigation>
+		</tnt:sideContent>
+		<tnt:mainContents>
+			<NavContainer id="pageContainer1" initialPage="page1" visible="false">
+				<pages>
+					<HBox>
+                        <items>
+                            <VBox>
+                                <items>
+                                    <Text id='id1' text='Blue Print 1'></Text>
+                                </items>
+                            </VBox>
+
+                            <VBox id="vboxsub2">
+                                <items>
+                                    <Text id='id2' text='Blue Print 2'></Text>
+                                </items>
+                            </VBox>
+                        </items>
+                    </HBox>
+				</pages>
+			</NavContainer>
+
+            <NavContainer id="pageContainer2" initialPage="page2" visible="false">
+				<pages>
+					<HBox>
+                        <items>
+                            <VBox>
+                                <items>
+                                    <Button id='bt1' text='Maintenance 1'></Button>
+                                </items>
+                            </VBox>
+
+                            <VBox>
+                                <items>
+                                    <Button id='bt2' text='Maintenance 2'></Button>
+                                </items>
+                            </VBox>
+                        </items>
+                    </HBox>
+				</pages>
+			</NavContainer>
+		</tnt:mainContents>
+	</tnt:ToolPage>
+</mvc:View>
