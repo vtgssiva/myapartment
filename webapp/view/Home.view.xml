@@ -48,15 +48,28 @@
 		<tnt:mainContents>
 			<NavContainer id="pageContainer1" initialPage="page1" visible="false">
 				<pages>
-					<HBox items="{oHomeTileModel>/tileList}" wrap="Wrap">
-                        <items>
-							<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="{oHomeTileModel>header}" subheader="{oHomeTileModel>subheader}" press="press">
-								<TileContent unit="{oHomeTileModel>unit}" footer="{oHomeTileModel>footer}">
-									<NumericContent value="{oHomeTileModel>value}" icon="{oHomeTileModel>icon}" withMargin="false" />
-								</TileContent>
-							</GenericTile>
-                        </items>
-                    </HBox>
+					<VBox>
+						<items>
+							<HBox items="{oHomeTileModel>/tileList}" wrap="Wrap">
+								<items>
+									<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="{oHomeTileModel>header}" subheader="{oHomeTileModel>subheader}" press="press">
+										<TileContent unit="{oHomeTileModel>unit}" footer="{oHomeTileModel>footer}">
+											<NumericContent value="{oHomeTileModel>value}" icon="{oHomeTileModel>icon}" withMargin="false" />
+										</TileContent>
+									</GenericTile>
+								</items>
+							</HBox>
+							<HBox items="{oHomeTileModel>/tileList1}" wrap="Wrap">
+								<items>
+									<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="{oHomeTileModel>header}" subheader="{oHomeTileModel>subheader}" press="press">
+										<TileContent unit="{oHomeTileModel>unit}" footer="{oHomeTileModel>footer}">
+											<NumericContent value="{oHomeTileModel>value}" icon="{oHomeTileModel>icon}" withMargin="false" />
+										</TileContent>
+									</GenericTile>
+								</items>
+							</HBox>
+						</items>
+					</VBox>
 				</pages>
 			</NavContainer>
 
