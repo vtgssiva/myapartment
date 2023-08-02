@@ -1,26 +1,3 @@
-<!-- <mvc:View controllerName="com.exercise.myfirstsapui5.controller.Home"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-        <content>
-            <HBox id="vbox1">
-                <items>
-                    <VBox id="vboxsub1">
-                        <items>
-                            <Text id='id1' text='VBox 1'></Text>
-                        </items>
-                    </VBox>
-
-                    <VBox id="vboxsub2">
-                        <items>
-                            <Text id='id2' text='VBox 2'></Text>
-                        </items>
-                    </VBox>
-                </items>
-            </HBox>
-        </content>
-    </Page>
-</mvc:View> -->
 <mvc:View
 	controllerName="com.exercise.myfirstsapui5.controller.Home"
 	xmlns="sap.m"
@@ -60,30 +37,24 @@
 				expanded="true"
 				selectedKey="{/selectedKey}"
 				itemSelect=".onItemSelect">
-				<tnt:NavigationList>
-					<tnt:NavigationListItem text="Apartment">
-						<tnt:NavigationListItem text="Blue Print" key="blueprint"/>
-                        <tnt:NavigationListItem text="Maintenance" key="maintenance"/>
-					</tnt:NavigationListItem>
+				<tnt:NavigationList items="{oLeftNavModel>/leftMenu}">
+					<!-- <tnt:NavigationListItem text="Apartment"> -->
+						<tnt:NavigationListItem text="{oLeftNavModel>title}" key="{oLeftNavModel>reference}"/>
+                        <!-- <tnt:NavigationListItem text="Maintenance" key="maintenance"/> -->
+					<!-- </tnt:NavigationListItem> -->
 				</tnt:NavigationList>
 			</tnt:SideNavigation>
 		</tnt:sideContent>
 		<tnt:mainContents>
 			<NavContainer id="pageContainer1" initialPage="page1" visible="false">
 				<pages>
-					<HBox>
+					<HBox items="{oHomeTileModel>/tileList}" wrap="Wrap">
                         <items>
-                            <VBox>
-                                <items>
-                                    <Text id='id1' text='Blue Print 1'></Text>
-                                </items>
-                            </VBox>
-
-                            <VBox id="vboxsub2">
-                                <items>
-                                    <Text id='id2' text='Blue Print 2'></Text>
-                                </items>
-                            </VBox>
+							<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop" header="{oHomeTileModel>header}" subheader="{oHomeTileModel>subheader}" press="press">
+								<TileContent unit="{oHomeTileModel>unit}" footer="{oHomeTileModel>footer}">
+									<NumericContent value="{oHomeTileModel>value}" icon="{oHomeTileModel>icon}" withMargin="false" />
+								</TileContent>
+							</GenericTile>
                         </items>
                     </HBox>
 				</pages>

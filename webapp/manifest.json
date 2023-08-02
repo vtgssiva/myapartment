@@ -16,9 +16,15 @@
             "toolsId": "33177bb6-f6d6-47a2-be4e-f95007401e9b"
         },
         "dataSources": {
-            "leftNavDS" : "/model/leftNavigationMenu.json",
-            "type" : "JSON"
-        }
+			"lefNavigationMenu": {
+				"uri": "mockdata/leftNavigationMenu.json",
+				"type": "JSON"
+			},
+            "homeTileList": {
+                "uri": "mockdata/genericTilesHomeScreen.json",
+                "type": "JSON"
+            }
+		}
     },
     "sap.ui": {
         "technology": "UI5",
@@ -62,9 +68,13 @@
                     "bundleName": "com.exercise.myfirstsapui5.i18n.i18n"
                 }
             },
-            "leftNavModel" : {
+            "oLeftNavModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "lefNavigationMenu"
+			},
+            "oHomeTileModel": {
                 "type": "sap.ui.model.json.JSONModel",
-                "dataSource": "leftNavDS"
+                "dataSource": "homeTileList"
             }
         },
         "resources": {
